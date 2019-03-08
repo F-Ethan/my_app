@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body%}
+<div class="content">
+	<span class= "total">Tansactions: {{ length }}</span>
+	<form action="/info" method="get">
+		<input type="search" name="q" placeholder="search" class="search" autofocus>
+		<input type="submit" name="submit">
+	</form>
+	<ul type="none">
+
+	{% for row in rows %}
+		<li class="{{ row['action'] }}">
+			<a href="{{ url_for('user', user_id=row['id']) }}">
+				<div class="list">
+					<div class="name">
+					{{ row["firstName"] }}
+					{{ row["lastName"] }}
+					</div>
+					<!-- <form class="acount" action="/user" method="post">
+						<input type="hidden" name="id" value="{{ row['id'] }}" >
+						<input type="submit" name="acount" value="Acount">
+					</form> -->
+					<span class="left info">{{ row["id"] }}</span>
+					<span class="middle info">{{ row["action"] }}</span>
+					<span class="right info">{{ row["amount"] }}</span>
+				</div>
+			</a>
+		</li>
+	{% endfor %}
+
+	</ul>
+</div>
+
+{% endblock %}

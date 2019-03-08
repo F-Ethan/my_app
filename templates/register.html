@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body%}
+
+<div class="container">
+	<form action="/registers" method="post">
+		<input type="text" name="email" placeholder="Your Email" autofocus class="input">
+		<input type="text" name="lastName" placeholder="Last Name" class="input">
+		<input type="text" name="firstName" placeholder="First Name" class="input">
+		<input type="date" name="birthDate"class="input">
+		<input type="password" name="password" placeholder="password" class="input"><br><br>
+		<input type="submit" name="Register" class="submit">
+	</form>
+</div>
+
+
+{% endblock %}

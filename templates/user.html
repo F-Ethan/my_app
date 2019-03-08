@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body%}
+
+	<div class="content">
+		<h1 class="name">
+		{{ users[0]["firstName"] }}
+		{{ users[0]["lastName"] }}
+		</h1>
+		<p>Email: {{ users[0]["email"] }} </p>
+		<p>User ID: {{ users[0]["id"] }} </p>
+		<p>Last Transaction: {{ recent[0]["date"] }} </p>
+		<p> Total Borrowed: P{{ amounts[0][0]["sum(amount)"] }} </p>
+		<p> Total Interst: P{{ amounts[2][0]["sum(amount)"] }} </p>
+		<p> Total Paid: P{{ amounts[1][0]["sum(amount)"] }} </p>
+		<div class="total">
+		Total Due: P{{ amounts[3] }}
+		</div>
+	</div>
+	
+
+
+{% endblock %}

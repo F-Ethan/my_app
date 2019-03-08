@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="initail-scale=1, width=device-width" name="viewport"/>
+		<title>My APP</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main7.css') }}">
+	</head>
+	<body>
+		<!-- <div class="header">
+			<span class="head"><strong class="pink">Rose</strong> Lending</span>
+			<a href="loginPage" class="link loginB">Login</a>
+			<a href="register" class="link register">Register</a>
+		</div> -->
+
+		<div class="header">
+			<span class="head"><strong class="pink">Rose</strong> Lending</span>
+			<ul  class="drop">
+				<li>
+				  Menu
+				  <ul>
+				    <li><a href="/">Home Page</a></li>
+				    <li><a href="loginPage">LogIn</a></li>
+				    <li><a href="register">Register</a></li>
+				  </ul>
+				</li>
+			</ul>
+		</div>
+		{% block body %}{% endblock %}
+		<div id="singin" class="login hidden">
+			<form>
+				<input type="email" name="username" placeholder="username" class="form" required autofocus><br>
+				<input type="password" name="password" placeholder="Password" class="form" required><br>
+				<input type="radio" name="remember" placeholder="Remember me" >Remember me<br><br>
+				<input type="submit" name="submit" >
+			</form>
+		</div>
+	</body>
+</html>
